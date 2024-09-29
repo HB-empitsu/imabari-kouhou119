@@ -164,6 +164,6 @@ def load_data():
 
 df, yyyymm = load_data()
 
-st.title(f"広報いまばり {yyyymm[:4]}年{{yyyymm[4:]}月　救急病院")
+st.title(f"広報いまばり {yyyymm[:4]}年{yyyymm[4:]}月　救急病院")
 
 st.dataframe(df, hide_index=True, use_container_width=True)
