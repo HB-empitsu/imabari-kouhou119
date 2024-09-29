@@ -159,11 +159,11 @@ def load_data():
     df["date"] = df["date"].dt.date
     df = df.reindex(columns=["date", "name", "type", "time"])
 
-    return df
+    return df, yyyymm
 
 
-df = load_data()
+df, yyyymm = load_data()
 
-st.title("広報いまばり 救急病院")
+st.title(f"広報いまばり {yyyymm[:4]}年{{yyyymm[4:]}月　救急病院")
 
-st.dataframe(df, hide_index=True)
+st.dataframe(df, hide_index=True, use_container_width=True)
