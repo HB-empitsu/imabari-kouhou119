@@ -155,7 +155,8 @@ def load_data():
     df = categorize_data(df)
     df = add_missing_rows(df)
 
-    df["date"] = pd.to_datetime(f"{yyyymm}01") + pd.to_timedelta(df["day"] - 1, unit="D").date()
+    df["date"] = pd.to_datetime(f"{yyyymm}01") + pd.to_timedelta(df["day"] - 1, unit="D")
+    df["date"] = df["date"].dt.date
     df = df.reindex(columns=["date", "name", "type", "time"])
 
     return df
