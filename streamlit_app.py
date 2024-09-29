@@ -166,4 +166,4 @@ df = load_data()
 
 st.title("広報いまばり 救急病院")
 
-st.dataframe(df)
+st.dataframe(df, hide_index=True)
